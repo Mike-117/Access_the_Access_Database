@@ -31,7 +31,7 @@ namespace Access_the_Access_Database
 
         private void loadlist()
         {
-
+            
             OleDbConnection con = new OleDbConnection();
             con.ConnectionString = ConfigurationManager.ConnectionStrings["Connection"].ToString();
             con.Open();

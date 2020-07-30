@@ -34,11 +34,11 @@ namespace Access_the_Access_Database
         {
             // Create OpenFileDialog
             Microsoft.Win32.OpenFileDialog openFileDlg = new Microsoft.Win32.OpenFileDialog();
-
+            openFileDlg.Filter = "Access Database Files (*.mdb)|*.mdb";
             Nullable<bool> result = openFileDlg.ShowDialog();
             if (result == true)
             {
-
+               
                 ShowDatabase showDatabase = new ShowDatabase();
                 this.NavigationService.Navigate(showDatabase);
 
