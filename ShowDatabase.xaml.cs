@@ -31,7 +31,7 @@ namespace Access_the_Access_Database
 
         private void loadlist()
         {
-            
+
             OleDbConnection con = new OleDbConnection();
             con.ConnectionString = ConfigurationManager.ConnectionStrings["Connection"].ToString();
             con.Open();
@@ -39,7 +39,6 @@ namespace Access_the_Access_Database
             cmd.CommandText = "select ML_Name from [ML]";
             cmd.Connection = con;
             OleDbDataReader rd = cmd.ExecuteReader();
-            // DataSet ds = new DataSet();
             listBox.ItemsSource = rd;
 
         }
