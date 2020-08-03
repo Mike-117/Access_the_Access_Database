@@ -10,10 +10,15 @@ I hit a roadblock, however, when it came to the first part, allowing the user to
 Every method I used had the same effect. From straight concatenation to Stringbuilder to OleDbConnectionStringBuilder, they all gave the double slash result. I have not discovered a workaround, nor have I found useful advice on the subject. Here is just one example of the code I used:
 
 ```
-  OleDbConnectionStringBuilder builder = new OleDbConnectionStringBuilder();
-  builder.Provider = "Microsoft.Jet.OLEDB.4.0";
-  builder.DataSource = openFileDlg.FileName;
-  builder["User Id"] = "admin;Password=;";
+   OleDbConnectionStringBuilder builder = new OleDbConnectionStringBuilder();
+   builder.Provider = @"Microsoft.Jet.OLEDB.4.0";
+   builder.DataSource = openFileDlg.FileName;
+   builder["User Id"] = @"admin";
+   builder["Password"] = "";
+                
+   OleDbConnection con = new OleDbConnection();
+   con.ConnectionString = builder.ToString();
+   con.Open();
 ```
 There were many others.
 
