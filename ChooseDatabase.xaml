@@ -4,34 +4,59 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Access_the_Access_Database"
-      mc:Ignorable="d" 
-      d:DesignHeight="350" d:DesignWidth="500"
-      Title="Choose a Database">
+      mc:Ignorable="d"
+      Title="Choose a Database" Height="450" Width="500">
 
-    <Grid Margin="10,0,10,10">
+    <Grid Margin="10,10,10,10">
         <Grid.Background>
             <ImageBrush ImageSource="watermark.png"  />
         </Grid.Background>
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="230" />
-            <ColumnDefinition />
+            <ColumnDefinition Width="0*" />
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition />
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="Auto" MinHeight="140"/>
+            <RowDefinition Height="100*" />
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-     
-        <Label Grid.Column="0" Style="{StaticResource headerTextStyle}" >
-            Choose an Access File
+        <Label Grid.Column="0" Style="{StaticResource headerTextStyle}" Margin="30,10,10,25" Height="30" RenderTransformOrigin="0,0" VerticalAlignment="Bottom" Content="Choose a Database&#x9;"/>
+
+        <Button Grid.Column="0" Click="Button_Click" Style="{StaticResource buttonStyle}" Margin="0,70,60,110" Height="Auto" RenderTransformOrigin="0,0" Grid.RowSpan="2">Choose File</Button>
+
+        <Label Style="{StaticResource headerTextStyle}" Margin="10,10,10,0" Height="30" RenderTransformOrigin="0,0" VerticalAlignment="Top" Grid.Column="2">
+            Database Results - Names
         </Label>
 
-    
-        <Button Grid.Column="1" Grid.Row="3" Click="Button_Click" Style="{StaticResource buttonStyle}">Choose File</Button>
-  
+        <Grid Grid.Column="1" Grid.Row="2" VerticalAlignment="Top" 
+            HorizontalAlignment="Left">
+
+            <ListBox ItemsSource="{Binding Path=ML}" x:Name="listBox" HorizontalAlignment="Left" Width="230" RenderTransformOrigin="0,0" Margin="10,-140,-240,-210">
+                <ListBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </ListBox.RenderTransform>
+
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Path=ML_Name}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+
+            </ListBox>
+        </Grid>
+
+
     </Grid>
 </Page>
