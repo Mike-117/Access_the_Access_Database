@@ -24,3 +24,9 @@ There were many others.
 
 This is the point where I would normally call on someone with more experience with these operations to give me some guidance. I'm sure there is a solution out there, and when I find it I will be editing this README file!
 
+## UPDATE
+
+Since I can't let any project go unfinished, I came back to look at this with fresh eyes. I concluded that the original design model I had used was inappropriate for what I was doing. I decided to put the entire program onto a single page. Doing this not only streamlined the code but it solved the problem of rendering the connection string! It seems that there was only an issue when transferring the string to a different view. So here is (what I hope) is the final code for this project. It feels good to overcome a roadblock and make your code finally work!
+
+![Access_Screenshot1](Access_Screenshot3.png)  
+
