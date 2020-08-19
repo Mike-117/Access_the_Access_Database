@@ -28,7 +28,7 @@ This is the point where I would normally call on someone with more experience wi
 
 ## UPDATE
 
-Since I can't let any project go unfinished, I came back to look at this with fresh eyes. I concluded that the original design model I had used was inappropriate for what I was doing. I decided to put the entire program onto a single page. Doing this not only streamlined the code but it solved the problem of rendering the connection string! It seems that there was only an issue when transferring the string to a different view. So here is (what I hope) is the final code for this project. It feels good to overcome a roadblock and make your code finally work.
+Since I can't let any project go unfinished, I came back a few days later to look at this with fresh eyes. I concluded that the original design model I had used was inappropriate for what I was doing. I decided to put the entire program onto a single page. Doing this not only streamlined the code but it solved the problem of rendering the connection string! It seems that there was only an issue when transferring the string to a different view. So here is (what I hope) is the final code for this project. It feels good to overcome a roadblock and make your code finally work.
 
 ![Access_Screenshot1](Access_Screenshot3.png)  
 
